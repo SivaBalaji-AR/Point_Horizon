@@ -1,7 +1,7 @@
 .nav-main{
     display: flex;
     justify-content: space-around;
-    background-color: black;
+    background: linear-gradient(to right, #141e30, #243b55);
 }
 
 nav ul{
@@ -10,13 +10,19 @@ nav ul{
 }
 
 ul li{
-     padding: 5px; 
+  padding-right: 30px;
 }
 
 .nav-modes li{
      padding-right: 100px;
 }
 
+.redirect{
+  text-decoration: none;
+  
+  color: #fff000;
+
+}
 img{
     height: 50px;
     width: 50px;
