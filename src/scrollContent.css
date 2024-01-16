@@ -1,7 +1,5 @@
 .offers-sub{
     background-color: rgb(245, 245, 190);
-    /* background: url(https://thumbs.dreamstime.com/b/special-offer-37086976.jpg); */
-    /* display: flex; */
     justify-content: center;
     align-items: center;
     padding: 30px;
@@ -17,8 +15,9 @@
     gap: 1rem ;
     scroll-behavior: smooth;
     scrollbar-width: none;
-    background-color: rgb(19, 19, 13);
-    /* background-image: linear-gradient(to right, #FF5858 , #FFFF45); */
+    background: linear-gradient(to right, #141e30, #243b55);
+    
+
     border-radius: 10px;
 }
 
@@ -27,13 +26,13 @@
     /* background:url(https://www.behindwoods.com/tamil-movies/slideshow/when-kollywood-heroes-turned-teachers/images/vijayakanth-in-ramana.jpg); */
     /* height: 25px;
     width: 100px; */
-    padding: 50px;
+    padding: 30px;
     margin-left: 5px;
     border-radius: 15px;
 }
 
 .offers-content{
-    background-color:black;
+    background: linear-gradient(to right, #141e30, #243b55);
     color: #ffa31a;
     display: flex;
     justify-content: center;
@@ -41,7 +40,7 @@
 }
 
 .vjk{
-    height: 100px;
-    width:100px;
+    height:100px;
+    width:120px;
+    border-radius: 10px;
 }
-
