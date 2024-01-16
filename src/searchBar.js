@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import './searchBar.css';
 import { UserContext } from './context';
 
@@ -21,7 +21,10 @@ const SearchBar = (props) =>
         alert("Please fill in all the required fields.");
         return;
       }
-
+      else if (BusDetails.from === BusDetails.to ) {
+        alert("Choose Different Destination in From and To field");
+        return;
+      }
       setUser(BusDetails);
       navigate('/busList');
     }
@@ -31,10 +34,25 @@ const SearchBar = (props) =>
         <div className='search-main'>
           <div className='search'>
             <div className='search-bar'>
-             <div><input type="text" name='from' placeholder="From" value={BusDetails.from} onChange={handleInputChange}></input></div>
-             <div><input type='text' name='to' placeholder='To' value={BusDetails.to} onChange={handleInputChange}></input></div>
+            
+             <div>
+          <select name='from' value={BusDetails.from} onChange={handleInputChange} className='transparent-select'>
+            <option value="">From: </option>
+            <option value="Salem">Salem</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Dindugal">Dindugal</option>
+          </select>
+        </div>
+        <div>
+          <select name='to' value={BusDetails.to} onChange={handleInputChange} className='transparent-select'>
+            <option value="">To: </option>
+            <option value="Salem">Salem</option>
+            <option value="Coimbatore">Coimbatore</option>
+            <option value="Dindugal">Dindugal</option>
+          </select>
+        </div>
              <div><input type='date' name='date' value={BusDetails.date} onChange={handleInputChange}></input></div>
-             <div><button onClick={handleSubmit} className='button-32'>Submit</button></div>
+             <div><button onClick={handleSubmit} className='button-321'>Submit</button></div>
              </div>
           </div>
        </div>
