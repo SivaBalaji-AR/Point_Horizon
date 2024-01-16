@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { UserContext } from './UserContext'; // Import UserContext
+import './LoginComponent.css'
 
 export default function SignupComponent() {
   const [signupDetails, setSignupDetails] = useState({ username: '', password: '' });
@@ -10,7 +11,7 @@ export default function SignupComponent() {
 
   const checkUserExists = async (username) => {
     try {
-      const response = await axios.get('https://6566de2d64fcff8d730f2d13.mockapi.io/users');
+      const response = await axios.get('https://6564372fceac41c0761da0ae.mockapi.io/api/v1/posts');
       return response.data.some(user => user.username === username);
     } catch (error) {
       console.error('Error fetching users:', error);
@@ -28,7 +29,7 @@ export default function SignupComponent() {
       return;
     }
 
-    axios.post('https://6566de2d64fcff8d730f2d13.mockapi.io/users', signupDetails)
+    axios.post('https://6564372fceac41c0761da0ae.mockapi.io/api/v1/posts', signupDetails)
       .then(response => {
         alert('Signup successful:');
         setUser(response.data); // Set the new user in context
@@ -43,14 +44,20 @@ export default function SignupComponent() {
     setSignupDetails({ ...signupDetails, [e.target.name]: e.target.value });
   };
 
+  let imgurl = 'https://t3.ftcdn.net/jpg/03/52/90/48/360_F_352904882_Uv8ZuVZNduEuE9KyjscqF1sXc2YzDppY.jpg'
+
   return (
-    <form onSubmit={handleSignup}>
+    <div className='outerdiv'>
+    <div className='innerdiv'>
+    <div><img src={imgurl} alt='fuck' className='imgsrc'/></div>
+    <form onSubmit={handleSignup} className='outerform'>
       <input
         name="username"
         type="text"
         placeholder="Username"
         value={signupDetails.username}
         onChange={handleInputChange}
+        className='input'
       />
       <input
         name="password"
@@ -58,8 +65,11 @@ export default function SignupComponent() {
         placeholder="Password"
         value={signupDetails.password}
         onChange={handleInputChange}
+        className='input'
       />
-      <button type="submit">Sign Up</button>
+      <button type="submit" className='button-63'>Sign Up</button>
     </form>
+    </div>
+    </div>
   );
 }
