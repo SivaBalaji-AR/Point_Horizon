@@ -17,12 +17,6 @@ function BusList() {
           <div>Date: {user.date}</div>
           </div>
           <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
-          <BusSeven dater={user.date}/> 
                                         
     </div>
   );
